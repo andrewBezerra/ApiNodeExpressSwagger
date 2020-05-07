@@ -28,17 +28,13 @@ const swaggerOptions = {
     },
   },
   // ['.routes/*.js']
-  apis: [
-    "src/controllers/clientecontroller.js",
-    "src/controllers/produtocontroller.js",
-  ],
+  apis: ["src/controllers/*.js"],
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use("/cliente", clienteRoute);
 app.use("/produto", produtoRoute);
-//require("./controllers/clientecontroller")(app);
 
 app.listen(port, () => {
   console.log(`Servidor ouvindo na porta ${port}`);
