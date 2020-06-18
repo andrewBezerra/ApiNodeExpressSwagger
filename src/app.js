@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 
@@ -11,8 +10,7 @@ const clienteRoute = require("./routes/clienteRoute");
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 
 const port = process.env.PORT || 5000;
 
